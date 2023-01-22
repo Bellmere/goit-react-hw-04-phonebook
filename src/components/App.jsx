@@ -17,6 +17,10 @@ export const App = () => {
   );
   const [filter, setFilter] = useState('');
 
+  useEffect(() => {
+    window.localStorage.setItem('contacts', JSON.stringify(contacts));
+  },[contacts])
+
   const handleChange = e => {
     const { name, value } = e.target;
     switch (name) {
@@ -28,10 +32,6 @@ export const App = () => {
         break;
     }
   };
-
-  useEffect(() => {
-    window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  },[contacts])
 
   const onSubmitForm = data => {
     const id = nanoid();
