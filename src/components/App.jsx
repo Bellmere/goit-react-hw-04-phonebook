@@ -7,6 +7,7 @@ import { nanoid } from 'nanoid';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
+    () =>
     JSON.parse(window.localStorage.getItem('contacts')) ||
     [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
