@@ -26,7 +26,7 @@ export const ContactForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.onSubmit(name, number);
+        props.onSubmit({name, number});
         reset();
     };
 
